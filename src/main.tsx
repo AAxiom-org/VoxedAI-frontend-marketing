@@ -36,6 +36,7 @@ createRoot(document.getElementById("root")!).render(
         isSatellite={false}
         signInUrl="https://voxed.ai/sign-in"
         signInForceRedirectUrl="https://app.voxed.ai/"
+        signInFallbackRedirectUrl="https://app.voxed.ai/"
         signUpForceRedirectUrl="https://app.voxed.ai/"
         signUpFallbackRedirectUrl="https://app.voxed.ai/"
         appearance={{
