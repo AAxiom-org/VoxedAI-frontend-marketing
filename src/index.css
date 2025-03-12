@@ -2,6 +2,7 @@
 @plugin '@tailwindcss/typography';
 
 @import "./styles/landing.css";
+@import "./styles/sandbox.css";
 
 @theme {
   /* Colors */
