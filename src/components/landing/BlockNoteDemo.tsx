@@ -146,7 +146,11 @@ const BlockNote = () => {
     });
 
     // Renders the editor instance using a React component.
-    return <BlockNoteView editor={editor} theme={theme} />;
+    return (
+        <div className="max-w-screen">
+            <BlockNoteView editor={editor} theme={theme} />;
+        </div>
+    );
 }
 
 export default function BlockNoteDemo() {

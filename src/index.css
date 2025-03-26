@@ -3,6 +3,7 @@
 
 @import "./styles/landing.css";
 @import "./styles/sandbox.css";
+@import "./styles/animations.css";
 
 @theme {
   /* Colors */

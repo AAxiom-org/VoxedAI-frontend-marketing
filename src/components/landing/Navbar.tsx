@@ -5,7 +5,7 @@ const Navbar: React.FC = () => {
     const { isSignedIn } = useAuth();
     const { theme } = useTheme();
     return (
-        <nav className="flex justify-between items-center py-8 relative z-10">
+        <nav className="flex justify-between items-center relative z-10">
         {/* <a
             href="/"
             className="flex items-center gap-3 font-bold text-4xl color-primary no-underline"
