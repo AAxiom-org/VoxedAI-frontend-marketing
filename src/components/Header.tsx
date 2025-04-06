@@ -29,6 +29,14 @@ const Header = () => {
                   rounded-xl flex justify-between items-center p-1 sm:p-1.5 bg-white px-3 sm:px-4
                   ${scrolled ? 'shadow-md bg-white/95 backdrop-blur-sm' : ''}`}
       >
+        {/* Mobile Menu Toggle */}
+        <button 
+          className="mr-2 md:hidden focus:outline-none" 
+          onClick={toggleMobileMenu}
+          aria-label="Toggle mobile menu"
+        >
+          {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+        </button>
         {/* Logo */}
         <a href="/" className="flex items-center py-2 relative z-10 w-8 sm:w-10 cursor-pointer">
           <img src={theme === "dark" ? "/voxed-icon-dark.png" : "/voxed-icon.png"} alt="Voxed" className="w-full" />
@@ -66,22 +74,14 @@ const Header = () => {
           </a>
         </div>
         
-        {/* Mobile Menu Toggle */}
-        <button 
-          className="ml-2 md:hidden focus:outline-none" 
-          onClick={toggleMobileMenu}
-          aria-label="Toggle mobile menu"
-        >
-          {mobileMenuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
-        </button>
         <div className="flex items-center gap-2">
           {/* Enter App Button */}
           <a
             href={isSignedIn ? "https://app.voxed.ai" : "/sign-in"}
             className="flex items-center gap-1 sm:gap-2 color-secondary no-underline font-medium transition-colors hover-text-adaptive relative after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-sky-400 after:transition-all after:duration-300 hover:after:w-full"
           >
-            <span className="hidden xs:inline text-sm sm:text-m">Enter App</span>
-            <ArrowRight className="size-4" />
+            <span className="hidden md:inline">Enter App</span>
+            <ArrowRight className="size-5" />
           </a>
         </div>
       </header>
