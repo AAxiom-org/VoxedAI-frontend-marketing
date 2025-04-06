@@ -47,18 +47,18 @@ const Hero: React.FC = () => {
     }, []);
 
     return (
-        <section className="flex flex-col items-center text-center relative z-2 pointer-events-none">
+        <section className="flex flex-col items-center text-center relative z-2 pointer-events-none pt-32">
             <div 
                 ref={titleWordsRef}
-                className="flex flex-col items-center mb-8"
+                className="flex flex-col items-center mb-10"
             >
-                {["Cultivate", "Your", "Intelligence", "Effortlessly"].map((word) => (
-                    <div key={word} className="overflow-visible space-y-10">
+                {["Your", "Second", "Brain", "Powered", "by", "AI"].map((word) => (
+                    <div key={word} className="overflow-visible space-y-8">
                         {Array.from(word).map((letter, index) => (
                             <span 
                                 key={index} 
                                 className={`inline-block text-5xl md:text-7xl font-extrabold bg-clip-text ${
-                                    word === "Intelligence" 
+                                    word === "AI" || word === "Brain"
                                     ? "text-transparent bg-gradient-to-r from-primary to-sky-500" 
                                     : "text-gray-700"
                                 }`}
@@ -74,24 +74,24 @@ const Hero: React.FC = () => {
                 ))}
             </div>
             
-            <h2 className="subtitle text-2xl md:text-3xl font-medium mb-8 opacity-0 animate-fadeIn pt-50" 
+            <p className="subtitle text-lg md:text-xl max-w-3xl font-medium mb-10 opacity-0 animate-fadeIn pt-6" 
                 style={{ animationFillMode: "forwards" }}>
-                Build an AI-assisted brain
-            </h2>
+                Effortlessly research, synthesize complex information, and generate insights through intelligent agents and dynamic visual knowledge graphs, connecting ideas in ways you never imagined.
+            </p>
             
-            <div className="cta-buttons flex flex-col sm:flex-row gap-4 mt-8 opacity-0 animate-fadeIn pointer-events-auto"
+            <div className="cta-buttons flex flex-col sm:flex-row gap-5 mt-10 opacity-0 animate-fadeIn pointer-events-auto"
                 style={{ animationFillMode: "forwards" }}>
                 {!isSignedIn && (
                     <a 
                         href="/sign-up" 
-                        className="bg-primary hover:bg-primary-dark text-white font-semibold py-3 px-8 rounded-lg transition duration-200"
+                        className="bg-gradient-to-r from-primary to-sky-500 hover:from-primary-dark hover:to-sky-600 text-white font-semibold py-4 px-10 rounded-md transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                     >
-                        Get Started
+                        Start Building Your Brain
                     </a>
                 )}
                 <a 
                     href="/pricing" 
-                    className="border border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-primary font-semibold py-3 px-8 rounded-lg transition duration-200"
+                    className="bg-transparent border border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-primary font-semibold py-4 px-10 rounded-md transition duration-300 hover:bg-secondary"
                 >
                     View Pricing
                 </a>

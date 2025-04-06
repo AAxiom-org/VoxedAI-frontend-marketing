@@ -371,7 +371,7 @@ const GraphBackground: React.FC = () => {
   return (
     <div 
       ref={containerRef} 
-      className="w-full h-screen absolute top-10 left-0"
+      className="w-full h-screen absolute left-0 top-0"
       style={{ minHeight: '500px' }}
     >
       <svg 

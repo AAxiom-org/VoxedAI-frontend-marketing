@@ -17,7 +17,6 @@ import Header from "./components/Header";
 
 // Contexts / Light Weight Files
 import { useTheme } from "./contexts/ThemeContext";
-import DevelopmentBanner from "./components/DevelopmentBanner";
 import { useEffect } from "react";
 
 
@@ -84,11 +83,9 @@ export default function App() {
           element={
             <>
               <SignedIn>
-                <DevelopmentBanner />
                 <HomePage />
               </SignedIn>
               <SignedOut>
-                <DevelopmentBanner />
                 <HomePage />
               </SignedOut>
             </>

@@ -635,4 +635,55 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Logo animations */
+/* Logo slides in from below */
+@keyframes logo-slide-in {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
+/* First logo exits upward */
+@keyframes logo-exit {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+/* Subtle shift animation for middle logos */
+
+
+/* Apply animations */
+.logo-slide-in {
+  animation: logo-slide-in 0.5s var(--ease-snappy) forwards;
+}
+
+.logo-exit {
+  animation: logo-exit 0.5s var(--ease-snappy) forwards;
+}
+
+.logo-static {
+  animation: logo-shift 0.7s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  transition: transform 0.7s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Blur effect for logos */
+.blur-sm {
+  filter: blur(4px);
+  transition: filter 0.5s ease;
+}
+
+/* Smooth left shifting for logos */
+.logo-shift-left {
+  transform: translateX(-100%);
+}

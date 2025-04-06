@@ -6,12 +6,6 @@ const Navbar: React.FC = () => {
     const { theme } = useTheme();
     return (
         <nav className="flex justify-between items-center relative z-10">
-        {/* <a
-            href="/"
-            className="flex items-center gap-3 font-bold text-4xl color-primary no-underline"
-        >
-            Voxed
-        </a> */}
         <a href="/" className="flex justify-between items-center py-8 relative z-10 w-12 cursor-pointer">
             <img src={theme === "dark" ? "/voxed-icon-dark.png" : "/voxed-icon.png"} alt="Voxed" className="w-full" />
         </a>
