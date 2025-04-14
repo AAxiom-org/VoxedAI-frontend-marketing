@@ -25,27 +25,54 @@ const queryClient = new QueryClient({
   },
 });
 
+const localization = {
+  waitlist: {
+    start: {
+      subtitle: 'Join The Waitlist To Get Early Access To Voxed!',
+    }
+  }
+}
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <ClerkProvider
+        localization={localization}
         domain=".voxed.ai"
         publishableKey={PUBLISHABLE_KEY}
-        routerPush={(to) => window.location.href = to}
+        routerPush={(to) => (window.location.href = to)}
         routerReplace={(to) => window.location.replace(to)}
-        isSatellite={false}
-        signInUrl="https://voxed.ai/sign-in"
-        signInForceRedirectUrl="https://app.voxed.ai/"
+        isSatellite={true}
+        signInUrl="http://voxed.ai/sign-in"
         signInFallbackRedirectUrl="https://app.voxed.ai/"
-        signUpForceRedirectUrl="https://app.voxed.ai/"
-        signUpFallbackRedirectUrl="https://app.voxed.ai/"
+        signInForceRedirectUrl="https://app.voxed.ai/"
         appearance={{
           baseTheme: window.matchMedia("(prefers-color-scheme: dark)").matches
             ? dark
             : undefined,
           variables: {
-            colorPrimary: "#E84A27",
-            colorTextOnPrimaryBackground: "#FFFFFF",
+            colorPrimary: "#0072d5",
+            colorTextOnPrimaryBackground: "#161616",
+          },
+          elements: {
+            header: {
+              display: "flex",
+              flexDirection: "row",
+              alignItems: "center",
+              textAlign: "left",
+            },
+            footer: {
+              backgroundColor: "transparent",
+              background: "transparent",
+            },
+            ...Object.fromEntries([
+              // All core elements
+              'card', 'form', 'cardBox', 'rootBox', 'popoverBox', 'actionCard'
+            ].map(elem => [elem, {
+              boxShadow: "none",
+              border: "none",
+              shadow: "none"
+            }]))
           },
         }}
       >

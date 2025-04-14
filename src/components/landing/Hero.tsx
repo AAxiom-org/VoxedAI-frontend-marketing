@@ -1,8 +1,6 @@
-import { useAuth } from "@clerk/clerk-react";
 import { useEffect, useRef } from "react";
 
 const Hero: React.FC = () => {
-    const { isSignedIn } = useAuth();
     const titleWordsRef = useRef<HTMLDivElement>(null);
     
     useEffect(() => {
@@ -46,6 +44,19 @@ const Hero: React.FC = () => {
         }
     }, []);
 
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            const elementRect = element.getBoundingClientRect();
+            const absoluteElementTop = elementRect.top + window.pageYOffset;
+            const middle = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
+            window.scrollTo({
+                top: middle,
+                behavior: 'smooth'
+            });
+        }
+    };
+
     return (
         <section className="flex flex-col items-center text-center relative z-2 pointer-events-none pt-32">
             <div 
@@ -81,20 +92,18 @@ const Hero: React.FC = () => {
             
             <div className="cta-buttons flex flex-col sm:flex-row gap-5 mt-10 opacity-0 animate-fadeIn pointer-events-auto"
                 style={{ animationFillMode: "forwards" }}>
-                {!isSignedIn && (
-                    <a 
-                        href="/sign-up" 
-                        className="bg-gradient-to-r from-primary to-sky-500 hover:from-primary-dark hover:to-sky-600 text-white font-semibold py-4 px-10 rounded-md transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                    >
-                        Start Building Your Brain
-                    </a>
-                )}
-                <a 
-                    href="/pricing" 
-                    className="bg-transparent border border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-primary font-semibold py-4 px-10 rounded-md transition duration-300 hover:bg-secondary"
+                <button 
+                    onClick={() => scrollToSection('waitlist')}
+                    className="bg-gradient-to-r from-primary to-sky-500 hover:from-primary-dark hover:to-sky-600 text-white font-semibold py-4 px-10 rounded-md transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 cursor-pointer"
                 >
-                    View Pricing
-                </a>
+                    Join The Waitlist
+                </button>
+                <button 
+                    onClick={() => scrollToSection('demo')}
+                    className="bg-transparent border border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-primary font-semibold py-4 px-10 rounded-md transition duration-300 hover:bg-secondary cursor-pointer"
+                >
+                    Request a Demo
+                </button>
             </div>
         </section>
     );

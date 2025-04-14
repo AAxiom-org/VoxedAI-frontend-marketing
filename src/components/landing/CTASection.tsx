@@ -1,7 +1,18 @@
-import { useAuth } from '@clerk/clerk-react';
-
 const CTASection: React.FC = () => {
-    const { isSignedIn } = useAuth();
+    
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            const elementRect = element.getBoundingClientRect();
+            const absoluteElementTop = elementRect.top + window.pageYOffset;
+            const middle = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
+            window.scrollTo({
+                top: middle,
+                behavior: 'smooth'
+            });
+        }
+    };
+    
     return (
       <section className="py-24 relative z-2">
         <div className="max-w-4xl mx-auto rounded-2xl border border-adaptive p-12 shadow-xl">
@@ -16,19 +27,19 @@ const CTASection: React.FC = () => {
           </p>
     
           <div className="flex justify-center gap-6 flex-wrap mb-12">
-            <a
-              href={isSignedIn ? "https://app.voxed.ai" : "/sign-in"}
-              className="bg-gradient-to-r from-primary to-sky-500 hover:from-primary-dark hover:to-sky-600 text-white py-4 px-10 rounded-md font-semibold cursor-pointer transition duration-300 hover:shadow-lg hover:-translate-y-1 shadow-adaptive no-underline"
+            <button
+              onClick={() => scrollToSection('waitlist')}
+              className="bg-gradient-to-r from-primary to-sky-500 hover:from-primary-dark hover:to-sky-600 text-white py-4 px-10 rounded-md font-semibold cursor-pointer transition duration-300 hover:shadow-lg hover:-translate-y-1 shadow-adaptive"
             >
-              Create Your Second Brain
-            </a>
+              Join The Waitlist
+            </button>
       
-            <a
-              href="#"
-              className="bg-secondary color-primary border border-adaptive py-4 px-10 rounded-md font-semibold cursor-pointer transition-all duration-300 hover:bg-adaptive hover:-translate-y-1 no-underline"
+            <button
+              onClick={() => scrollToSection('demo')}
+              className="bg-secondary color-primary border border-adaptive py-4 px-10 rounded-md font-semibold cursor-pointer transition-all duration-300 hover:bg-adaptive hover:-translate-y-1"
             >
-              Watch Demo
-            </a>
+              Request a Demo
+            </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

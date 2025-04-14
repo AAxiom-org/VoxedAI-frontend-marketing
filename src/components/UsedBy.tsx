@@ -22,8 +22,8 @@ type ColumnState = {
 
 // Animation timing constants
 const ANIMATION_DURATION = 500; // ms
-const COLUMN_DELAY = 150; // ms between columns
-const CYCLE_INTERVAL = 1000; // ms between cycles
+const COLUMN_DELAY = 100; // ms between columns
+const CYCLE_INTERVAL = 500; // ms between cycles
 
 export default function IntellectualsUsedBy() {
   // Each column has its own state for which logo is currently showing

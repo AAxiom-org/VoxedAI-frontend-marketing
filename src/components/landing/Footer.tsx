@@ -1,35 +1,35 @@
-interface FooterLinkProps {
-    name: string;
-    url: string;
-  }
+// interface FooterLinkProps {
+//     name: string;
+//     url: string;
+//   }
   
-  interface FooterColumnProps {
-    title: string;
-    links: FooterLinkProps[];
-  }
+  // interface FooterColumnProps {
+  //   title: string;
+  //   links: FooterLinkProps[];
+  // }
   
-  const FooterColumn: React.FC<FooterColumnProps> = ({ title, links }) => {
-    return (
-      <div className="flex-1 min-w-[200px]">
-        <h4 className="text-lg font-medium mb-6 color-primary">{title}</h4>
-        <div className="flex flex-col gap-3">
-          {links.map((link, index) => (
-            <a
-              key={index}
-              href={link.url}
-              className="color-secondary hover:text-sky-400 transition-colors"
-            >
-              {link.name}
-            </a>
-          ))}
-        </div>
-      </div>
-    );
-  };
+  // const FooterColumn: React.FC<FooterColumnProps> = ({ title, links }) => {
+  //   return (
+  //     <div className="flex-1 min-w-[200px]">
+  //       <h4 className="text-lg font-medium mb-6 color-primary">{title}</h4>
+  //       <div className="flex flex-col gap-3">
+  //         {links.map((link, index) => (
+  //           <a
+  //             key={index}
+  //             href={link.url}
+  //             className="color-secondary hover:text-sky-400 transition-colors"
+  //           >
+  //             {link.name}
+  //           </a>
+  //         ))}
+  //       </div>
+  //     </div>
+  //   );
+  // };
   
   const Footer: React.FC = () => {
     return (
-      <footer className="bg-primary py-12 border-t border-adaptive relative z-2">
+      <footer className="bg-primary py-12 border-t border-adaptive relative z-2 rounded-xl m-5">
         <div className="w-full max-w-7xl mx-auto px-6">
           <div className="flex flex-wrap justify-between gap-8">
             <div className="flex-1 min-w-[200px]">
@@ -145,7 +145,7 @@ interface FooterLinkProps {
               </div>
             </div>
   
-            <FooterColumn
+            {/* <FooterColumn
               title="Product"
               links={[
                 { name: "Features", url: "#" },
@@ -173,7 +173,7 @@ interface FooterLinkProps {
                 { name: "Cookie Policy", url: "#" },
                 { name: "GDPR", url: "#" },
               ]}
-            />
+            /> */}
           </div>
   
           <div className="text-center color-muted mt-12 text-sm">

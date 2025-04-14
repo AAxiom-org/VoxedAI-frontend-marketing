@@ -6,6 +6,8 @@ import CTASection from "../components/landing/CTASection";
 import Footer from "../components/landing/Footer";
 import GraphBackground from "../components/GraphBackground";
 import UsedBy from "../components/UsedBy";
+import WaitlistPage from "../components/Waitlist";
+import DemoPage from "../components/Demo";
 
 const HomePage: React.FC = () => {  
   return (
@@ -14,10 +16,12 @@ const HomePage: React.FC = () => {
       <div className="w-full max-w-7xl mx-auto px-6 space-y-50 pb-100">
         <Hero />
         <UsedBy />
-        <div className="space-y-100">
+        <div className="space-y-10">
           <Problems />
           <DemoSection />
           <CTASection />
+          <WaitlistPage />
+          <DemoPage />
         </div>
       </div>
 

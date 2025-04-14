@@ -40,12 +40,18 @@ const DemoSection: React.FC = () => {
               </div>
             </div>
     
-            <div className="flex-1 min-w-[300px] bg-secondary rounded-xl border border-adaptive p-2 shadow-xl">
-              {/* Placeholder for Knowledge Space UI Demo */}
-              <div className="aspect-video bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg overflow-hidden">
-                <div className="h-full w-full flex items-center justify-center">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-400 font-bold">Knowledge Space UI</span>
-                </div>
+            <div className="flex-1 min-w-[300px] bg-secondary rounded-xl shadow-xl overflow-hidden">
+              <div className="aspect-video rounded-lg overflow-hidden">
+                <video 
+                  src="/videos/workspace.mp4" 
+                  autoPlay 
+                  muted 
+                  loop 
+                  className="w-full h-full object-cover" 
+                  playsInline
+                  controlsList="nodownload"
+                  onContextMenu={(e) => e.preventDefault()}
+                />
               </div>
             </div>
           </div>
@@ -90,12 +96,18 @@ const DemoSection: React.FC = () => {
               </div>
             </div>
             
-            <div className="flex-1 min-w-[300px] bg-secondary rounded-xl border border-adaptive p-2 shadow-xl">
-              {/* Placeholder for AI Assistant Demo */}
-              <div className="aspect-video bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg overflow-hidden">
-                <div className="h-full w-full flex items-center justify-center">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-400 font-bold">AI Assistant Interface</span>
-                </div>
+            <div className="flex-1 min-w-[300px] bg-secondary rounded-xl shadow-xl overflow-hidden">
+              <div className="aspect-video rounded-lg overflow-hidden">
+                <video 
+                  src="/videos/digest.mp4" 
+                  autoPlay 
+                  muted 
+                  loop 
+                  className="w-full h-full object-cover" 
+                  playsInline
+                  controlsList="nodownload"
+                  onContextMenu={(e) => e.preventDefault()}
+                />
               </div>
             </div>
           </div>
@@ -140,12 +152,18 @@ const DemoSection: React.FC = () => {
               </div>
             </div>
     
-            <div className="flex-1 min-w-[300px] bg-secondary rounded-xl border border-adaptive p-2 shadow-xl">
-              {/* Placeholder for Knowledge Graph Demo */}
-              <div className="aspect-video bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg overflow-hidden">
-                <div className="h-full w-full flex items-center justify-center">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-sky-400 font-bold">Knowledge Graph Visualization</span>
-                </div>
+            <div className="flex-1 min-w-[300px] bg-secondary rounded-xl shadow-xl overflow-hidden">
+              <div className="aspect-video rounded-lg overflow-hidden">
+                <video 
+                  src="/videos/graph.mp4" 
+                  autoPlay 
+                  muted 
+                  loop 
+                  className="w-full h-full object-cover" 
+                  playsInline
+                  controlsList="nodownload"
+                  onContextMenu={(e) => e.preventDefault()}
+                />
               </div>
             </div>
           </div>

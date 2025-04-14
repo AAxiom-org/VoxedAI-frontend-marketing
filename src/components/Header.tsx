@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '@clerk/clerk-react';
 import { useTheme } from '../contexts/ThemeContext';
-import { ArrowRight, Home, Book, CreditCard, Info, Menu, X } from 'lucide-react';
+import { ArrowRight, Home, Menu, X, ClipboardList, MonitorCheck } from 'lucide-react';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -20,6 +20,20 @@ const Header = () => {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+        const elementRect = element.getBoundingClientRect();
+        const absoluteElementTop = elementRect.top + window.pageYOffset;
+        const middle = absoluteElementTop - (window.innerHeight / 2) + (elementRect.height / 2);
+        window.scrollTo({
+            top: middle,
+            behavior: 'smooth'
+        });
+        setMobileMenuOpen(false);
+    }
   };
 
   return (
@@ -51,7 +65,21 @@ const Header = () => {
             <Home className="size-4" />
             <span className="hidden sm:inline text-m">Home</span>
           </a>
-          <a
+          <button
+            onClick={() => scrollToSection('waitlist')}
+            className="flex items-center gap-2 color-secondary no-underline font-medium transition-colors hover-text-adaptive relative after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-sky-400 after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
+          >
+            <ClipboardList className="size-4" />
+            <span className="hidden sm:inline text-m">WaitList</span>
+          </button>
+          <button
+            onClick={() => scrollToSection('demo')}
+            className="flex items-center gap-2 color-secondary no-underline font-medium transition-colors hover-text-adaptive relative after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-sky-400 after:transition-all after:duration-300 hover:after:w-full cursor-pointer"
+          >
+            <MonitorCheck className="size-4" />
+            <span className="hidden sm:inline text-m">Demo</span>
+          </button>
+          {/* <a
             href="#"
             className="flex items-center gap-2 color-secondary no-underline font-medium transition-colors hover-text-adaptive relative after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-0.5 after:bg-sky-400 after:transition-all after:duration-300 hover:after:w-full"
           >
@@ -71,7 +99,7 @@ const Header = () => {
           >
             <CreditCard className="size-4" />
             <span className="hidden sm:inline text-m">Pricing</span>
-          </a>
+          </a> */}
         </div>
         
         <div className="flex items-center gap-2">
@@ -107,30 +135,20 @@ const Header = () => {
             <Home className="size-4" />
             <span>Home</span>
           </a>
-          <a
-            href="#"
-            className="flex items-center gap-2 p-2 color-secondary no-underline font-medium rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
-            onClick={() => setMobileMenuOpen(false)}
+          <button
+            onClick={() => scrollToSection('waitlist')}
+            className="flex items-center gap-2 p-2 color-secondary no-underline font-medium rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 w-full text-left cursor-pointer"
           >
-            <Book className="size-4" />
-            <span>Blog</span>
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-2 p-2 color-secondary no-underline font-medium rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
-            onClick={() => setMobileMenuOpen(false)}
+            <ClipboardList className="size-4" />
+            <span>WaitList</span>
+          </button>
+          <button
+            onClick={() => scrollToSection('demo')}
+            className="flex items-center gap-2 p-2 color-secondary no-underline font-medium rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 w-full text-left cursor-pointer"
           >
-            <Info className="size-4" />
-            <span>About</span>
-          </a>
-          <a
-            href="#"
-            className="flex items-center gap-2 p-2 color-secondary no-underline font-medium rounded-lg transition-colors hover:bg-gray-100 dark:hover:bg-gray-800"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            <CreditCard className="size-4" />
-            <span>Pricing</span>
-          </a>
+            <MonitorCheck className="size-4" />
+            <span>Demo</span>
+          </button>
           <div className="h-px w-full bg-gray-200 dark:bg-gray-700 my-1"></div>
           <a
             href={isSignedIn ? "https://app.voxed.ai" : "/sign-in"}
