@@ -50,7 +50,6 @@ export default function DemoPage() {
                             }}
                             title="Request a Demo"
                             frameBorder="0"
-                            scrolling="no"
                             allowTransparency={true}
                             onLoad={() => {
                                 // Send a message to the iframe to request its height
