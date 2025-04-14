@@ -17,7 +17,6 @@ import Header from "./components/Header";
 
 // Contexts / Light Weight Files
 import { useTheme } from "./contexts/ThemeContext";
-import { useEffect } from "react";
 
 
 export default function App() {
@@ -26,14 +25,6 @@ export default function App() {
   
   // Determine toast styling based on theme
   const isDark = theme === "dark";
-
-  const Redirect = () => {
-    useEffect(() => {
-      window.location.href = "https://app.voxed.ai/";
-    }, []);
-  
-    return null; // Prevents rendering anything extra
-  };
   
   return (      
     <Router>
@@ -73,7 +64,7 @@ export default function App() {
         <Route
           path="*"
           element={
-            <Navigate to="/" />
+            <HomePage />
           }
         />
 
@@ -82,12 +73,7 @@ export default function App() {
           path="/"
           element={
             <>
-              <SignedIn>
-                <HomePage />
-              </SignedIn>
-              <SignedOut>
-                <HomePage />
-              </SignedOut>
+              <HomePage />
             </>
           }
         />
@@ -100,7 +86,7 @@ export default function App() {
                 <SignInUp />
               </SignedOut>
               <SignedIn>
-                <Redirect />
+                <Navigate to="/" />
               </SignedIn>
             </>
           }
@@ -114,7 +100,7 @@ export default function App() {
                 <SignInUp />
               </SignedOut>
               <SignedIn>
-                <Redirect />
+                <Navigate to="/" />
               </SignedIn>
             </>
           }

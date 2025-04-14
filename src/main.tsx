@@ -40,12 +40,14 @@ createRoot(document.getElementById("root")!).render(
         localization={localization}
         domain=".voxed.ai"
         publishableKey={PUBLISHABLE_KEY}
-        routerPush={(to) => (window.location.href = to)}
+        routerPush={(to) => window.location.href = to}
         routerReplace={(to) => window.location.replace(to)}
-        isSatellite={true}
-        signInUrl="http://voxed.ai/sign-in"
-        signInFallbackRedirectUrl="https://app.voxed.ai/"
+        isSatellite={false}
+        signInUrl="https://voxed.ai/sign-in"
         signInForceRedirectUrl="https://app.voxed.ai/"
+        signInFallbackRedirectUrl="https://app.voxed.ai/"
+        signUpForceRedirectUrl="https://app.voxed.ai/"
+        signUpFallbackRedirectUrl="https://app.voxed.ai/"
         appearance={{
           baseTheme: window.matchMedia("(prefers-color-scheme: dark)").matches
             ? dark
