@@ -8,11 +8,12 @@ import GraphBackground from "../components/GraphBackground";
 import UsedBy from "../components/UsedBy";
 import WaitlistPage from "../components/Waitlist";
 import DemoPage from "../components/Demo";
+import NetworkBackground from "../components/NetworkBackground";
 
 const HomePage: React.FC = () => {  
   return (
     <div className="w-full max-w-full min-h-screen bg-transparent color-primary overflow-x-hidden">
-      <GraphBackground />
+      <NetworkBackground />
       <div className="w-full max-w-7xl mx-auto px-6 space-y-50 pb-100">
         <Hero />
         <UsedBy />
