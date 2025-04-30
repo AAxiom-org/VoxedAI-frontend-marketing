@@ -4,7 +4,6 @@ import Problems from "../components/landing/Problems";
 import DemoSection from "../components/landing/DemoSection";
 import CTASection from "../components/landing/CTASection";
 import Footer from "../components/landing/Footer";
-import GraphBackground from "../components/GraphBackground";
 import UsedBy from "../components/UsedBy";
 import WaitlistPage from "../components/Waitlist";
 import DemoPage from "../components/Demo";
