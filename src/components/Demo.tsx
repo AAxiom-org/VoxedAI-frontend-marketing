@@ -29,16 +29,19 @@ export default function DemoPage() {
     
     return (
         <section id="demo" className="py-24">
-            <div className="max-w-4xl mx-auto px-6 flex flex-col items-center">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-sky-500 bg-clip-text text-transparent text-center">
-                    Request a Demo
-                </h2>
-                <p className="color-secondary mx-auto mb-10 leading-relaxed text-center text-lg max-w-3xl">
-                    Interested in seeing Voxed in action? Fill out the form below and our team will 
-                    reach out to schedule a personalized demo tailored to your needs.
-                </p>
+            <div className="max-w-7xl mx-auto px-8 flex flex-col items-center">
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl font-serif font-medium text-gray-900 mb-4">
+                        Request a Demo
+                    </h2>
+                    <div className="w-16 h-0.5 bg-gray-200 mx-auto mb-6"></div>
+                    <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                        Interested in seeing Voxed in action? Fill out the form below and our team will 
+                        reach out to schedule a personalized demo tailored to your research needs.
+                    </p>
+                </div>
                 <div className="w-full max-w-2xl">
-                    <div className="relative rounded-xl border border-adaptive bg-secondary backdrop-blur-sm shadow-adaptive w-full overflow-hidden">
+                    <div className="relative rounded-sm border border-gray-100 bg-white shadow-sm w-full overflow-hidden">
                         <iframe
                             ref={iframeRef}
                             src="https://tally.so/embed/meo9VQ?hideTitle=1"

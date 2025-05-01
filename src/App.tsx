@@ -13,7 +13,6 @@ import { Toaster } from "react-hot-toast";
 // Marketing Pages
 import HomePage from "./pages/Home";
 import SignInUp from "./pages/auth/SignIn-Up";
-import Header from "./components/Header";
 
 // Contexts / Light Weight Files
 import { useTheme } from "./contexts/ThemeContext";
@@ -28,7 +27,6 @@ export default function App() {
   
   return (      
     <Router>
-      <Header />
       <Toaster
         position="top-center"
         toastOptions={{

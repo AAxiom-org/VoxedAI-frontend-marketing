@@ -1,10 +1,6 @@
 import { Waitlist } from '@clerk/clerk-react'
-import { useTheme } from '../contexts/ThemeContext';
 
 export default function WaitlistPage() {
-    const { theme } = useTheme();
-    const isDarkMode = theme === 'dark';
-    
     const waitlistProps = {
         appearance: {
           elements: {
@@ -12,40 +8,46 @@ export default function WaitlistPage() {
               display: "none"
             },
             formButtonPrimary: {
-              backgroundImage: "linear-gradient(to right, #38bdf8, #818cf8)",
+              backgroundColor: "black",
+              color: "white",
+              borderRadius: "0.125rem",
               "&:hover": {
-                backgroundImage: "linear-gradient(to right, #0ea5e9, #6366f1)"
+                backgroundColor: "#333"
               }
             },
             card: {
-              border: "1px solid",
-              borderColor: isDarkMode ? "rgba(203, 213, 225, 0.1)" : "rgba(51, 65, 85, 0.1)",
-              borderRadius: "0.75rem",
+              border: "0px solid",
+              borderColor: "rgba(51, 65, 85, 0.1)",
+              borderRadius: "0.125rem",
               boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-              color: isDarkMode ? "#f8fafc" : "#0f172a",
+              color: "#0f172a",
             },
             formFieldLabel: {
-              color: isDarkMode ? "#cbd5e1" : "#334155",
+              color: "#334155",
             },
             formFieldInput: {
-              border: "1px solid",
-              color: isDarkMode ? "#f8fafc" : "#0f172a",
+              border: "0px solid",
+              borderColor: "rgba(51, 65, 85, 0.1)",
+              color: "#0f172a",
             }
           }
         }
     };
     
     return (
-        <section id="waitlist" className="py-24">
-            <div className="max-w-4xl mx-auto px-6 flex flex-col items-center">
-                <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-sky-500 bg-clip-text text-transparent text-center">
+        <section id="waitlist" className="py-24 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-8 flex flex-col items-center">
+                <div className="text-center mb-16">
+                  <h2 className="text-4xl font-serif font-medium text-gray-900 mb-4">
                     Join Our Waitlist
-                </h2>
-                <p className="color-secondary mx-auto mb-10 leading-relaxed text-center text-lg max-w-3xl">
-                    Be among the first to experience our AI-powered second brain. 
-                    Sign up now to get early access and help shape the future of knowledge management.
-                </p>
-                <div className="relative rounded-xl overflow-hidden border border-adaptive bg-secondary backdrop-blur-sm shadow-adaptive w-fit">
+                  </h2>
+                  <div className="w-16 h-0.5 bg-gray-200 mx-auto mb-6"></div>
+                  <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+                    Be among the first to experience Voxed, our AI-powered research platform. 
+                    Sign up now to get early access and help shape the future of automated research.
+                  </p>
+                </div>
+                <div className="relative rounded-sm overflow-hidden border border-gray-100 bg-white shadow-sm ">
                     <Waitlist {...waitlistProps} />
                 </div>
             </div>
