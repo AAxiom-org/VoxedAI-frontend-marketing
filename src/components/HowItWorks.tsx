@@ -12,7 +12,7 @@ const HowItWorks: React.FC = () => {
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="w-full lg:w-1/2">
             <div className="md:border-r md:border-gray-200 lg:border-r lg:border-gray-200">
-              <img src="/diagrams/vox.png" alt="Voxed Logo" className="h-full" />
+              <img src="/diagrams/vox.png" alt="Voxed Logo" className="w-full h-auto" />
             </div>
           </div>
           
